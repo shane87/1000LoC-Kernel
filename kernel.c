@@ -27,12 +27,8 @@ void putchar(char ch) {
 }
 
 void kernel_main(void){
-    printf("\n\nHello %s", "World!!\n\n");
-    printf("1 + 2 = %d, %x", 1 + 2, 0x1234abcd);
-
-    for(;;){
-        __asm__ __volatile__("wfi");
-    }
+    PANIC("Booted!!");
+    printf("unreachable here!\n");
 }
 
 __attribute__((section(".text.boot")))
